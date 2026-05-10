@@ -116,10 +116,10 @@ const Subscribe = () => {
     <div className="min-h-screen">
       <Navbar />
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">Subscribe to EcoCollect</h1>
-          <p className="text-gray-600 text-lg">
+      <main className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-2">Subscribe to EcoCollect</h1>
+          <p className="text-gray-600 text-base sm:text-lg">
             Get 2 trash cans delivered to your home with your subscription
           </p>
         </div>
@@ -133,14 +133,14 @@ const Subscribe = () => {
           <Card padding="lg" className="mb-6">
             <CardTitle className="mb-6">Select Your Plan</CardTitle>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-4 sm:mb-6">
               {[1, 2, 3].map((months) => (
                 <button
                   key={months}
                   type="button"
                   onClick={() => setFormData(prev => ({ ...prev, durationMonths: months }))}
                   className={`
-                    p-6 rounded-xl border-2 transition-all text-left
+                    p-3 sm:p-6 rounded-xl border-2 transition-all text-center
                     ${formData.durationMonths === months
                       ? 'border-primary-500 bg-primary-50'
                       : 'border-gray-200 hover:border-gray-300'
@@ -148,16 +148,16 @@ const Subscribe = () => {
                   `}
                 >
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-gray-800">{months} Month{months > 1 ? 's' : ''}</p>
-                    <p className="text-3xl font-bold text-primary-600 mt-2">
+                    <p className="text-base sm:text-xl lg:text-2xl font-bold text-gray-800">{months} Mo{months > 1 ? 's' : ''}</p>
+                    <p className="text-lg sm:text-2xl lg:text-3xl font-bold text-primary-600 mt-1 sm:mt-2">
                       {formatCurrency(pricing?.monthlyPrice || 5000)}
-                      <span className="text-sm text-gray-500 font-normal">/mo</span>
+                      <span className="text-xs sm:text-sm text-gray-500 font-normal">/mo</span>
                     </p>
                     {months === 2 && pricing?.discount2Months > 0 && (
-                      <p className="text-sm text-green-600 mt-2">Save {pricing.discount2Months}%</p>
+                      <p className="text-xs sm:text-sm text-green-600 mt-1">Save {pricing.discount2Months}%</p>
                     )}
                     {months === 3 && pricing?.discount3Months > 0 && (
-                      <p className="text-sm text-green-600 mt-2">Save {pricing.discount3Months}%</p>
+                      <p className="text-xs sm:text-sm text-green-600 mt-1">Save {pricing.discount3Months}%</p>
                     )}
                   </div>
                 </button>

@@ -8,20 +8,20 @@ export const StatCard = ({ title, value, icon, trend, trendValue, color = 'prima
   }
 
   return (
-    <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-lg border border-white/50 p-6 hover:shadow-xl transition-all duration-300">
-      <div className="flex items-start justify-between">
-        <div>
-          <p className="text-sm font-medium text-gray-500 mb-1">{title}</p>
-          <p className="text-3xl font-bold text-gray-800">{value}</p>
+    <div className="bg-white/80 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-lg border border-white/50 p-4 sm:p-6 hover:shadow-xl transition-all duration-300">
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0 flex-1">
+          <p className="text-xs sm:text-sm font-medium text-gray-500 mb-1 truncate">{title}</p>
+          <p className="text-2xl sm:text-3xl font-bold text-gray-800 truncate">{value}</p>
           {trend && (
-            <p className={`text-sm mt-2 ${trend === 'up' ? 'text-green-600' : 'text-red-600'}`}>
+            <p className={`text-xs sm:text-sm mt-1 sm:mt-2 ${trend === 'up' ? 'text-green-600' : 'text-red-600'}`}>
               {trend === 'up' ? '↑' : '↓'} {trendValue}
             </p>
           )}
         </div>
         <div className={`
-          w-14 h-14 rounded-2xl bg-gradient-to-br ${colors[color]}
-          flex items-center justify-center text-2xl shadow-lg
+          w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br ${colors[color]}
+          flex items-center justify-center text-xl sm:text-2xl shadow-lg flex-shrink-0
         `}>
           {icon}
         </div>
@@ -31,7 +31,7 @@ export const StatCard = ({ title, value, icon, trend, trendValue, color = 'prima
 }
 
 export const MetricGrid = ({ children }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+  <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
     {children}
   </div>
 )

@@ -52,10 +52,10 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/dashboard" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-lg shadow-primary-500/30">
-              <span className="text-white text-xl">♻️</span>
+            <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-lg shadow-primary-500/30">
+              <span className="text-white text-lg sm:text-xl">♻️</span>
             </div>
-            <span className="text-xl font-bold text-gradient">EcoCollect</span>
+            <span className="text-lg sm:text-xl font-bold text-gradient">EcoCollect</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -138,9 +138,9 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-xl hover:bg-gray-100"
+            className="md:hidden p-1.5 sm:p-2 rounded-lg hover:bg-gray-100"
           >
-            <svg className="w-6 h-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {isMobileMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (

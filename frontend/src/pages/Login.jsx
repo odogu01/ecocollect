@@ -60,19 +60,19 @@ const Login = () => {
 
       <div className="relative w-full max-w-md">
         {/* Logo */}
-        <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center gap-3">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-lg shadow-primary-500/30">
-              <span className="text-3xl">♻️</span>
+        <div className="text-center mb-6 sm:mb-8">
+          <Link to="/" className="inline-flex items-center gap-2 sm:gap-3">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-lg shadow-primary-500/30">
+              <span className="text-2xl sm:text-3xl">♻️</span>
             </div>
-            <span className="text-3xl font-bold text-gradient">EcoCollect</span>
+            <span className="text-2xl sm:text-3xl font-bold text-gradient">EcoCollect</span>
           </Link>
-          <p className="text-gray-500 mt-2">Welcome back! Please login to continue.</p>
+          <p className="text-gray-500 mt-2 text-sm sm:text-base">Welcome back! Please login to continue.</p>
         </div>
 
         {/* Login Form */}
-        <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/50 p-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Sign In</h2>
+        <div className="bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/50 p-6 sm:p-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6">Sign In</h2>
 
           {error && (
             <Alert type="error" message={error} className="mb-6" onClose={clearError} />
@@ -132,12 +132,12 @@ const Login = () => {
         </div>
 
         {/* Demo Credentials */}
-        <div className="mt-6 p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-white/50">
-          <p className="text-sm text-gray-600 font-medium mb-2">Demo Accounts:</p>
+        <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-white/50">
+          <p className="text-sm text-gray-600 font-medium mb-1 sm:mb-2">Demo Accounts:</p>
           <div className="text-xs text-gray-500 space-y-1">
-            <p>Admin: admin@ecocollect.com / admin123</p>
-            <p>Company: company@ecocollect.com / company123</p>
-            <p>Driver: driver@ecocollect.com / driver123</p>
+            <p className="hidden sm:block">Admin: admin@ecocollect.com / admin123</p>
+            <p className="hidden sm:block">Company: company@ecocollect.com / company123</p>
+            <p className="hidden sm:block">Driver: driver@ecocollect.com / driver123</p>
             <p>Resident: user@example.com / user123</p>
           </div>
         </div>
