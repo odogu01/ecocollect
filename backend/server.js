@@ -28,15 +28,18 @@ const httpServer = createServer(app)
 const io = new Server(httpServer, {
   cors: {
     origin: function(origin, callback) {
-      // Allow requests with no origin (mobile apps, curl, etc)
-      // In production, replace with your actual Vercel domain
+      // Allow all origins in production for flexibility
+      // In production, you can restrict to specific domains
       const allowedOrigins = [
         'http://localhost:5173',
         'http://localhost:3000',
         process.env.FRONTEND_URL
       ].filter(Boolean)
       
-      if (!origin || allowedOrigins.includes(origin)) {
+      // If no origin (like mobile apps or curl), allow it
+      // If origin is in allowed list, allow it
+      // If running in production without FRONTEND_URL set, allow all
+      if (!origin || allowedOrigins.includes(origin) || process.env.NODE_ENV === 'production') {
         callback(null, true)
       } else {
         callback(new Error('Not allowed by CORS'))
@@ -59,7 +62,7 @@ app.use(cors({
       process.env.FRONTEND_URL
     ].filter(Boolean)
     
-    if (!origin || allowedOrigins.includes(origin)) {
+    if (!origin || allowedOrigins.includes(origin) || process.env.NODE_ENV === 'production') {
       callback(null, true)
     } else {
       callback(new Error('Not allowed by CORS'))
